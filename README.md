@@ -1,5 +1,7 @@
 # FrontTfg
 
+Este proyecto es la página de Angular de mi aplicación web del trabajo de fin de grado de Javier Zapatero Santos
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
 
 ## Development server
