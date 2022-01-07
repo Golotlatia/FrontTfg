@@ -29,6 +29,7 @@ export class TimerPageComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-  
+
+  console.log("He llegago hasta aqui");
   }
 }

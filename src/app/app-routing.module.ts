@@ -2,20 +2,25 @@
 import { LoginPageComponent } from './login-page/login-page.component';
 import { TimerPageComponent } from './timer-page/timer-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule  } from '@angular/core';
+import { RouterModule, Routes, CanActivate  } from '@angular/router';
 import { WebLayoutComponent } from './web-layout/web-layout.component';
+import { AuthGuardService as AuthGuard } from './services/auth-guard/auth-guard.service';
 
-const routes: Routes = [
+
+export const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   {
     path: '',
     component: WebLayoutComponent,
     children: [
-      { path: 'dashboard', component: DashboardPageComponent },
-      { path: 'timer', component: TimerPageComponent },
+      { path: 'dashboard', component: DashboardPageComponent, canActivate:[AuthGuard] },
+  { path: 'timer', component: TimerPageComponent, canActivate:[AuthGuard]},
+      
     ],
   },
+  
+  
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import { TimerPageComponent } from './timer-page/timer-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { WebLayoutComponent } from './web-layout/web-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthGuardService as AuthGuard } from './services/auth-guard/auth-guard.service';
 
 
 @NgModule({
@@ -27,10 +28,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
     NgxMaterialTimepickerModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
