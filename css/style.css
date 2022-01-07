@@ -1,0 +1,556 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body,
+button {
+  font-family: "Montserrat-Regular";
+}
+:root {
+  --offcanvas-width: 23rem;
+  --topNavbarHeight: 7rem;
+  /*--skyblue:#1f2d40;#00bcd4;*/
+  --darkblue: #17212f;
+  --lightblue: #1f2d40;
+}
+
+
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("../fonts/Montserrat-Light.ttf");
+}
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("../fonts/Montserrat-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("../fonts/Montserrat-Medium.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat-Bold.ttf");
+}
+.navbar {
+  height: 7rem;
+  background: var(--lightblue);
+}
+.sidebar-nav {
+  width: var(--offcanvas-width);
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  body {
+    overflow: auto !important;
+  }
+  main {
+    margin-left: var(--offcanvas-width);
+  }
+  /* this is to remove the backdrop */
+  .offcanvas-backdrop::before {
+    display: none;
+  }
+  .sidebar-nav {
+    -webkit-transform: none;
+    transform: none;
+    visibility: visible !important;
+    height: calc(100% - var(--topNavbarHeight));
+    top: var(--topNavbarHeight);
+    background: var(--lightblue);
+    border-right: 1px solid #4a4848;
+  }
+}
+
+.sidebar-nav,
+.navbar {
+  background: var(--lightblue);
+}
+
+.top_menu {
+  color: black;
+  border-bottom: 0.1rem solid #4a4848;
+}
+.navbar-toggler {
+  color: black !important;
+}
+.main_logo {
+  max-width: 16rem;
+}
+.navbar-dark .navbar-toggler-icon {
+  color: black !important;
+  background-image: none !important;
+}
+.user_avator {
+  max-width: 4rem;
+  color: white;
+}
+.right_corner_link {
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  color: white !important;
+}
+.contents_only .dropdown-item {
+  font-size: 1.6rem;
+}
+.navbar-dark .navbar-toggler-icon {
+  color: white !important;
+  background-image: none !important;
+}
+#h-10 {
+  background: red !important;
+}
+.navbar-toggler {
+  color: white;
+  width: auto;
+  outline: none;
+  padding: 0rem;
+  line-height: 3rem;
+  border: none;
+  font-size: 2rem !important;
+}
+.navbar-toggler:focus {
+  outline: none;
+  border: none;
+}
+.navbar-toggler i {
+  font-size: 2rem !important;
+}
+.thisbtton {
+  display: none;
+}
+.icon_only {
+  display: none;
+}
+.contents_only {
+  display: block;
+}
+
+.sidebarnavigation li {
+  padding: 0rem;
+  padding-left: 1.5rem;
+  line-height: 2rem;
+}
+.sidebarnavigation li a {
+  color: white !important;
+  font-size: 1.5rem;
+  font-family: "Montserrat-Medium";
+  text-transform: capitalize;
+}
+.sidebarnavigation li a:hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+.sidebarnavigation li i {
+  padding-right: 1rem;
+  color: var(--skyblue);
+}
+.mt-55 {
+  margin-top: 5rem;
+}
+.logutbtn {
+  background: var(--darkblue) !important;
+  border-radius: 0.5rem;
+  color: white;
+  height: 4rem;
+  line-height: 3.5rem;
+  font-size: 1.6rem;
+}
+.logutbtn:hover {
+  color: white !important;
+  opacity: 0.6;
+  outline: 1px solid gray;
+}
+
+/*[class^="bi-"]::before, [class*=" bi-"]::before*/
+.sidebar-link[aria-expanded="true"] .right-icon {
+  margin-left: 0rem;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+* {
+  outline: none;
+}
+
+.close_icon {
+  margin: 2rem;
+  padding: 1rem !important;
+}
+.formain {
+  /* #f8fbfb */
+  background: var(--darkblue);
+  box-sizing: border-box;
+  margin-top: var(--topNavbarHeight);
+}
+
+.main_contents {
+  border: 0.1rem solid gray;
+}
+.humidity_side {
+  padding: 1rem;
+  background: white;
+  border: 0.1rem solid gray;
+}
+.temprature_side {
+  padding: 1rem;
+  background: white;
+  border: 0.1rem solid gray;
+}
+.formHeading {
+  font-size: 2rem;
+  font-family: "Montserrat-Medium";
+}
+.sameheight {
+  height: 30rem;
+  width: 100%;
+}
+.recent_timers {
+  margin-top: 3rem;
+}
+.main_heading {
+  width: 100%;
+  color: white;
+  text-align: center;
+  border-bottom: 0.1rem solid gray;
+  line-height: 0.1rem;
+  margin: 0.1rem 0 0.2rem;
+  font-size: 2.5rem;
+  font-family: "Montserrat-SemiBold";
+  border-radius: 0.5rem;
+}
+
+.main_heading span {
+  background: var(--lightblue);
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  outline: 0.1rem solid gray;
+}
+
+.mb3 {
+  margin-bottom: 1.5rem;
+}
+.timer_card {
+  background: var(--lightblue);
+  padding: 1rem 0rem;
+  box-sizing: border-box;
+  border: 0.1rem solid #4a4848;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.card-header,
+.card-footer {
+  border: none;
+  background: none;
+}
+.px3 {
+  padding: 0rem 1rem;
+}
+.timer_on_heading {
+  margin: 0rem;
+  padding: 0rem;
+  font-size: 1.6rem;
+  font-family: "Montserrat-SemiBold";
+}
+.timer_middle_area {
+  text-align: center;
+  padding: 1rem 0rem;
+}
+.timer_day {
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.3rem;
+  background: var(--darkblue) !important;
+  color: white;
+  border-radius: 0.2rem;
+  margin-top: 0rem;
+  text-align: center;
+  text-transform: capitalize;
+  /*outline:.1rem solid white;*/
+}
+.timer_big_no {
+  font-size: 10rem;
+  font-family: "Montserrat-SemiBold";
+  color: white;
+}
+.timer_big_days {
+  display: block;
+  margin-top: -5rem;
+  margin-left: 30%;
+  font-family: "Montserrat-Medium";
+  color: white;
+}
+
+.start_time,
+.end_time {
+  display: block;
+  font-size: 1.4rem;
+  color: white;
+}
+.enttime {
+  text-align: right;
+}
+.forbg {
+  background: var(--darkblue);
+  padding: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: white;
+  height: auto;
+  /*border-bottom-left-radius:.5rem;
+  border-bottom-right-radius:.5rem;*/
+}
+.swith_toggle {
+  text-align: right;
+}
+.swith_toggle .form-switch input {
+  display: block;
+  text-align: right;
+  width: 4.5rem;
+  height: 2rem;
+  cursor: pointer;
+  float: right;
+}
+.timer_name {
+  font-size: 1.5rem;
+  margin: 0px;
+  padding: 0px;
+  line-height: 2.8rem;
+}
+
+/*login page start*/
+.forheight {
+  height: 100vh !important;
+}
+.login_body {
+  background: var(--darkblue);
+}
+.login_form {
+  background: var(--lightblue);
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+.login_from_heading {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  font-family: "Montserrat-Medium";
+}
+
+.login_form form {
+  margin-top: 2rem;
+}
+.login_form form label {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.login_form form input {
+  display: block;
+  width: 100%;
+  background: var(--darkblue);
+  border: none;
+  height: 3.5rem;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+  color: white;
+}
+.login_form form input::placeholder {
+  color: gray;
+  font-size: 1.3rem;
+}
+.login_form form input:focus {
+  outline: 1px solid gray;
+}
+.login_form form input[type="submit"] {
+  display: block;
+  width: 100%;
+  background: white;
+  border: none;
+  height: 3.5rem;
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  font-family: "Montserrat-SemiBold";
+  text-transform: uppercase;
+  color: var(--darkblue);
+}
+.login_form form input[type="submit"]:hover {
+  opacity: 0.6;
+}
+body {
+  background: var(--darkblue);
+}
+/*Timers page start*/
+.add_timer_btn {
+  padding: 0.6rem 2rem;
+  border: none;
+  background: white;
+  color: var(--darkblue);
+  font-size: 1.6rem;
+  border-radius: 0.3rem;
+  font-family: "Montserrat-Medium";
+}
+.add_timer_btn:hover {
+  opacity: 0.5;
+}
+
+.all_timer_card {
+  margin-top: 1.2rem;
+  background: var(--lightblue);
+  padding: 2rem;
+  box-sizing: border-box;
+  outline: 0.1rem solid #4a4848;
+}
+.forflex {
+  display: flex;
+  align-items: center;
+}
+.all_timer_heading {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  font-size: 1.8rem;
+}
+.days_btns button {
+  border-radius: 0.3rem !important;
+  margin-right: 0.2rem;
+  font-size: 1.2rem !important;
+  color: white;
+  border: 1px solid #4a4848 !important;
+  background: var(--darkblue);
+  padding: 0.3rem 0.5rem;
+  text-transform: capitalize;
+}
+.days_btns button:hover {
+  background: var(--lightblue);
+  color: white;
+}
+.mb33 {
+  margin-bottom: 0rem;
+}
+.actions button {
+  font-size: 1.3rem;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat-Medium";
+}
+.actions button i {
+  padding-right: 0.3rem;
+}
+
+.days_btns input {
+  height: 3rem;
+  background: var(--darkblue);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  width: 8rem;
+  margin-left: 0.5rem;
+}
+
+.dtp div.dtp-date,
+.dtp div.dtp-time {
+  background: var(--darkblue) !important;
+}
+.dtp > .dtp-content > .dtp-date-view > header.dtp-header {
+  background: var(--darkblue) !important;
+  padding-bottom: 2rem !important;
+  border: none !important;
+  outline: none !important;
+}
+.dtp div.dtp-picker,
+.dtp .dtp-buttons {
+  background: var(--darkblue) !important;
+  color: white !important;
+}
+.dtp-btn-cancel {
+  background: #dc3545;
+  margin-right: 1rem !important;
+}
+.dtp-btn-ok {
+  background: #198754;
+}
+.dtp-btn-cancel,
+.dtp-btn-ok {
+  color: white !important;
+  font-size: 1.6rem;
+}
+.dtp .dtp-actual-meridien a.selected {
+  background: #198754 !important;
+}
+line[Style] {
+  stroke: #198754 !important;
+  stroke-width: 8;
+  transform: rotate(270deg);
+}
+
+.offcanvaswidth {
+  width: 0rem;
+}
+.close_icon {
+  display: none;
+}
+.close_icon {
+  padding: 2rem;
+  text-align: right;
+  display: none !important;
+}
+.edit_timer {
+  display: none;
+}
+.dtp-actual-day {
+  display: none !important;
+  height: 3rem !important;
+}
+
+.contents_only .dropdown-item {
+  background: var(--lightblue) !important;
+  color: white;
+  line-height: 3rem;
+  border-bottom: 1px solid #4a4848;
+  padding: 0rem 1rem;
+  font-size: 1.4rem;
+}
+.contents_only .dropdown-item:hover {
+  opacity: 0.6;
+}
+.contents_only .dropdown-menu {
+  padding: 0rem 0rem !important;
+  background: var(--lightblue);
+}
+.noborder {
+  border-bottom: 0rem !important;
+}
+
+/*modal style start*/
+.modal-content {
+  background: var(--darkblue);
+  padding: 0rem !important;
+}
+.modal-header {
+  border: none;
+}
+.class_white {
+  background: none;
+  color: black;
+}
+.modal-body {
+  margin-top: -2rem;
+}

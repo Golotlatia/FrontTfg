@@ -1,0 +1,32 @@
+<!-- Javier Zapatero Santos TFG -->
+<div class="offcanvas offcanvas-start sidebar-nav" tabindex="-1" id="sidebar">
+  <div class="d-block d-lg-none text-right">
+    <button
+      type="button"
+      class="btn-close text-reset close_icon bg-white"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body py-4 px-0">
+    <nav class="navbar-dark">
+      <ul class="navbar-nav sidebarnavigation">
+        <li>
+          <a [routerLink]="['/dashboard']" class="nav-link">
+            <i class="bi bi-house-door"></i>Dashboard
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/timer']" class="nav-link">
+            <i class="bi bi-speedometer2"></i>Timers
+          </a>
+        </li>
+        <li class="d-block d-lg-none">
+          <a href="#" class="nav-link">
+            <i class="bi bi-box-arrow-right"></i>Logout
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
