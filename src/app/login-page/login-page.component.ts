@@ -1,5 +1,6 @@
 //Javier Zapatero Santos TFG
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -8,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authservice: AuthService) { }
 
   ngOnInit(): void {
   }
+
+  
+  login(){
+
+    this.authservice.login();
+
+
+    
+
+  }
+  
 
 }

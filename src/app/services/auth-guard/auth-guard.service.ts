@@ -6,23 +6,32 @@ import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 
+
 @Injectable()
 export class AuthGuardService implements CanActivate {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authservice: AuthService) { }
 
   canActivate(
-    route: ActivatedRouteSnapshot,  
+    route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<boolean|UrlTree>|Promise<boolean|UrlTree>|boolean|UrlTree {
-  
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    return this.router.createUrlTree(
-      ['/login', { message: 'No tienes la autorizacion necesaria' }]
-      
-    );
+    let res: Boolean;
 
-    
+    let response = this.authservice.comprobar()
 
+    return response.then(respuesta => {
+
+      if (respuesta) {
+        return true
+      } else {
+        return this.router.createUrlTree(
+          ['/login', { message: 'No tienes la autorizacion necesaria' }]
+
+        );
+      }
+
+    })
   }
 }

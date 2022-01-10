@@ -13,6 +13,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { WebLayoutComponent } from './web-layout/web-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuardService as AuthGuard } from './services/auth-guard/auth-guard.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { AuthGuardService as AuthGuard } from './services/auth-guard/auth-guard.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    HttpClientModule,
+     
     NgxMaterialTimepickerModule,
     BrowserAnimationsModule
   ],
