@@ -13,6 +13,7 @@ export const routes: Routes = [
   {
     path: '',
     component: WebLayoutComponent,
+    canActivate:[AuthGuard],
     children: [
       { path: 'dashboard', component: DashboardPageComponent, canActivate:[AuthGuard] },
   { path: 'timer', component: TimerPageComponent, canActivate:[AuthGuard]},

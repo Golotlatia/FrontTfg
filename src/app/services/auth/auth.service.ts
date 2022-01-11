@@ -20,6 +20,7 @@ const urlLogin = 'http://192.168.1.50:8080/getToken';
 export class AuthService {
 
   token = {'token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoiamF2aSIsImNvbnRyYXNlw7FhIjoiY29udHJhc2XDsWEgZGUgamF2aSsiLCJpYXQiOjE2NDE4MjE5NTh9.VQbnvQdxxLHhqsPTeiNkVZch5q4_0Jj_IO_eLn2DJq4'};
+  respuesta = {'res':''};
 
   httpOptions = {
     
@@ -38,39 +39,33 @@ export class AuthService {
 
    login () {
     
-     this.getToken();    
 
+     this.getToken();    
+     console.log('Nuevo token recivibo segundo : ' + this.token.token)
      
    }
 
   async getToken(): Promise<any> {
     
 
-    await this.http.get<respuesta>(urlLogin, this.httpOptions).subscribe( hola=> this.token.token=hola.token);
+    await this.http.get<respuesta>(urlLogin, this.httpOptions).subscribe( hola=> {
+      
+      
+      this.token.token=hola.respuesta,
+      console.log('Nuevo token recivibod primero: ' + this.token.token)
+    
+    });
 
   }
 
 
 
-  comprobar(): Promise<any> {
-
-   let auth =  this.checkData();
-
-   console.log('Token usado: ' +this.token.token);
-
-   return auth;
-   
-  }
+ async comprobar(): Promise<any> {
 
 
-
-  async checkData(): Promise<any> {
-
-    return await this.http.get(urlVerify, this.httpOptions).toPromise();
+  return this.http.get<respuesta>(urlVerify, this.httpOptions).toPromise();
 
   }
-
-
 
 }
 
