@@ -1,8 +1,14 @@
 <!-- Javier Zapatero Santos TFG -->
 <main class="formain">
-  <div class="text-end">
-    <button class="add_timer_btn">Add Timer</button>
+
+  <div class="row">
+    <div class="col-12 text-end show_when_click">
+      <button class="btn me-2 add_timer_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Timer</button>
+    </div>
   </div>
+
+
+  
   <!-- for butn  -->
 
   <div class="row">
@@ -36,14 +42,8 @@
             <!-- days button end -->
           </div>
           <!-- timer_middle end -->
-          <div
-            class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-end actions"
-          >
-            <button
-              class="btn btn-success me-2 edit_button"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
+          <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-end actions">
+            <button class="btn btn-success me-2 edit_button" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <i class="bi bi-pencil"></i>
               Edit
             </button>
@@ -73,22 +73,14 @@
             <div class="modal-body p-0 pt-0">
               <div class="card all_timer_card">
                 <div class="row forflex">
-                  <div
-                    class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-start"
-                  >
+                  <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-start">
                     <h3 class="all_timer_heading">Edit Time Name</h3>
                   </div>
                   <!-- timer name end -->
-                  <div
-                    class="col-12 col-md-6 mb-3 mb-md-0 timer_middle text-center"
-                  >
+                  <div class="col-12 col-md-6 mb-3 mb-md-0 timer_middle text-center">
                     <div class="days_btns">
-                      <div
-                        class=""
-                        role="group"
-                        aria-label="Basic outlined example"
-                      >
-                        <button type="button" class="btn">Monday</button>
+                      <div class="" role="group" aria-label="Basic outlined example">
+                        <button type="button" (click)="lunes()" class="btn">Monday</button>
                         <button type="button" class="btn">Tuesday</button>
                         <button type="button" class="btn">Wednesday</button>
                         <button type="button" class="btn">Thursday</button>
@@ -99,45 +91,25 @@
                       <div class="row mt-4">
                         <div class="col-6 text-start noponmobile">
                           <span class="start_time d-inline">Start Time:</span>
-                          <input
-                            placeholder="Start time"
-                            aria-label="24hr format"
-                            [ngxTimepicker]="startTime"
-                            [format]="24"
-                          />
-                          <ngx-material-timepicker
-                            [timepickerClass]="'custome-class'"
-                            [theme]="darkTheme"
-                            #startTime
-                          ></ngx-material-timepicker>
+                          <input placeholder="Start time" aria-label="24hr format" [ngxTimepicker]="startTime"
+                            [format]="24" />
+                          <ngx-material-timepicker [timepickerClass]="'custome-class'" [theme]="darkTheme" #startTime>
+                          </ngx-material-timepicker>
                         </div>
 
                         <div class="col-6 enttime noponmobile">
                           <span class="end_time d-inline">End Time:</span>
-                          <input
-                            placeholder="End time"
-                            aria-label="24hr format"
-                            [ngxTimepicker]="endTime"
-                            [format]="24"
-                          />
-                          <ngx-material-timepicker
-                            [theme]="darkTheme"
-                            #endTime
-                          ></ngx-material-timepicker>
+                          <input placeholder="End time" aria-label="24hr format" [ngxTimepicker]="endTime"
+                            [format]="24" />
+                          <ngx-material-timepicker [theme]="darkTheme" #endTime></ngx-material-timepicker>
                         </div>
                       </div>
                     </div>
                     <!-- days button end -->
                   </div>
                   <!-- timer_middle end -->
-                  <div
-                    class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-end actions"
-                  >
-                    <button
-                      class="btn btn-success me-2 done_button"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    >
+                  <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-end actions">
+                    <button class="btn btn-success me-2 done_button" data-bs-dismiss="modal" aria-label="Close">
                       <i class="bi bi-check2-all"></i>
 
                       Done
@@ -157,5 +129,7 @@
     </div>
     <!-- main div for time en -->
   </div>
+
+
   <!-- row end -->
 </main>
