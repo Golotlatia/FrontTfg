@@ -3,6 +3,10 @@ import { NgxMaterialTimepickerTheme } from './../../../node_modules/ngx-material
 import { Component, OnInit } from '@angular/core';
 import { timer } from '../interfaces/timer';
 
+import { FormsModule } from '@angular/forms';
+
+
+
 @Component({
   selector: 'app-timer-page',
   templateUrl: './timer-page.component.html',
@@ -13,6 +17,9 @@ import { timer } from '../interfaces/timer';
 
 
 export class TimerPageComponent implements OnInit {
+
+   StartTime:any;
+   EndTime:any;
   public selectedTime = '18:33';
 
   private programa: timer = {
@@ -66,6 +73,7 @@ jueves() {
 viernes() {
   this.programa.viernes = !this.programa.viernes;
   console.log(this.programa.viernes);
+ 
 }
 sabado() {
   this.programa.sabado = !this.programa.sabado;
@@ -76,6 +84,10 @@ domingo() {
   console.log(this.programa.domingo);
 }
 
+prueba(){
+  console.log('La fecha de inicio es: ' + this.StartTime);
+  console.log('La fecha de final es: ' + this.EndTime);
+}
 
 
 

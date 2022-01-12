@@ -14,6 +14,7 @@ import { WebLayoutComponent } from './web-layout/web-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuardService as AuthGuard } from './services/auth-guard/auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
      
     NgxMaterialTimepickerModule,
     BrowserAnimationsModule

@@ -91,7 +91,7 @@
                       <div class="row mt-4">
                         <div class="col-6 text-start noponmobile">
                           <span class="start_time d-inline">Start Time:</span>
-                          <input placeholder="Start time" aria-label="24hr format" [ngxTimepicker]="startTime"
+                          <input [(ngModel)]="StartTime" placeholder="Start time"  aria-label="24hr format" [ngxTimepicker]="startTime"
                             [format]="24" />
                           <ngx-material-timepicker [timepickerClass]="'custome-class'" [theme]="darkTheme" #startTime>
                           </ngx-material-timepicker>
@@ -99,7 +99,7 @@
 
                         <div class="col-6 enttime noponmobile">
                           <span class="end_time d-inline">End Time:</span>
-                          <input placeholder="End time" aria-label="24hr format" [ngxTimepicker]="endTime"
+                          <input [(ngModel)]="EndTime" placeholder="End time" aria-label="24hr format" [ngxTimepicker]="endTime"
                             [format]="24" />
                           <ngx-material-timepicker [theme]="darkTheme" #endTime></ngx-material-timepicker>
                         </div>
@@ -109,7 +109,7 @@
                   </div>
                   <!-- timer_middle end -->
                   <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-end actions">
-                    <button class="btn btn-success me-2 done_button" data-bs-dismiss="modal" aria-label="Close">
+                    <button class="btn btn-success me-2 done_button" (click)="prueba()" data-bs-dismiss="modal" aria-label="Close">
                       <i class="bi bi-check2-all"></i>
 
                       Done
