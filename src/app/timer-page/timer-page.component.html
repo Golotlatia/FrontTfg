@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col-12 text-end show_when_click">
-      <button class="btn me-2 add_timer_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Timer</button>
+      <button class="btn me-2 add_timer_btn" data-bs-toggle="modal" data-bs-target="#addModal">Add Timer</button>
     </div>
   </div>
 
@@ -124,8 +124,73 @@
           </div>
         </div>
       </div>
-
       <!-- modal end -->
+
+      <!-- modal start ADD MODAL -->
+      <div class="modal" tabindex="-1" id="addModal">
+        <div class="modal-dialog p-0 modal-dialog-centered modal-xl pt-0">
+          <div class="modal-content">
+            <!--  <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </button>
+                    </div> -->
+            <div class="modal-body p-0 pt-0">
+              <div class="card all_timer_card">
+                <div class="row forflex">
+                  <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-start">
+                    <h3 class="all_timer_heading">Edit Time Name</h3>
+                  </div>
+                  <!-- timer name end -->
+                  <div class="col-12 col-md-6 mb-3 mb-md-0 timer_middle text-center">
+                    <div class="days_btns">
+                      <div class="" role="group" aria-label="Basic outlined example">
+                        <button type="button" (click)="lunes()" class="btn">Monday</button>
+                        <button type="button" (click)="martes()" class="btn">Tuesday</button>
+                        <button type="button" (click)="miercoles()" class="btn">Wednesday</button>
+                        <button type="button" (click)="jueves()" class="btn">Thursday</button>
+                        <button type="button" (click)="viernes()" class="btn">Friday</button>
+                        <button type="button" (click)="sabado()" class="btn">Saturday</button>
+                        <button type="button" (click)="domingo()" class="btn">Sunday</button>
+                      </div>
+                      <div class="row mt-4">
+                        <div class="col-6 text-start noponmobile">
+                          <span class="start_time d-inline">Start Time:</span>
+                          <input [(ngModel)]="StartTime" placeholder="Start time"  aria-label="24hr format" [ngxTimepicker]="startTime"
+                            [format]="24" />
+                          <ngx-material-timepicker [timepickerClass]="'custome-class'" [theme]="darkTheme" #startTime>
+                          </ngx-material-timepicker>
+                        </div>
+
+                        <div class="col-6 enttime noponmobile">
+                          <span class="end_time d-inline">End Time:</span>
+                          <input [(ngModel)]="EndTime" placeholder="End time" aria-label="24hr format" [ngxTimepicker]="endTime"
+                            [format]="24" />
+                          <ngx-material-timepicker [theme]="darkTheme" #endTime></ngx-material-timepicker>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- days button end -->
+                  </div>
+                  <!-- timer_middle end -->
+                  <div class="col-12 col-md-3 mb-3 mb-md-0 text-center text-md-end actions">
+                    <button class="btn btn-success me-2 done_button" (click)="prueba()" data-bs-dismiss="modal" aria-label="Close">
+                      <i class="bi bi-check2-all"></i>
+
+                      Done
+                    </button>
+                  </div>
+                  <!-- timer right end -->
+                </div>
+                <!-- row end -->
+              </div>
+              <!-- all_timer_card -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal end -->
+
+
     </div>
     <!-- main div for time en -->
   </div>

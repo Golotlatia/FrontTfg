@@ -1,9 +1,7 @@
 export interface timer {
   nombre: string;
-  horaInicioHoras: string;
-  horaInicioMinutos: string;
-  horaFinalHoras: string;
-  horaFinalMinutos: string;
+  horaInicio: string;
+  horaFinal: string;  
   lunes: boolean;
   martes: boolean;
   miercoles: boolean;

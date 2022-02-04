@@ -6,8 +6,8 @@ import { respuesta } from 'src/app/interfaces/respuesta';
 
 
 
-const urlVerify = 'http://192.168.1.50:8080/verifyToken';
-const urlLogin = 'http://192.168.1.50:8080/getToken';
+const urlVerify = 'http://192.168.100.79:8080/verifyToken';
+const urlLogin = 'http://192.168.100.79:8080/getToken';
 
 
 
@@ -19,7 +19,7 @@ const urlLogin = 'http://192.168.1.50:8080/getToken';
 
 export class AuthService {
 
-  token = {'token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoiamF2aSIsImNvbnRyYXNlw7FhIjoiY29udHJhc2XDsWEgZGUgamF2aSsiLCJpYXQiOjE2NDE4MjE5NTh9.VQbnvQdxxLHhqsPTeiNkVZch5q4_0Jj_IO_eLn2DJq4'};
+  token = {'token':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoiamF2aSIsImNvbnRyYXNlw7FhIjoiY29udHJhc2XDsWEgZGUgamF2aSsiLCJpYXQiOjE2NDM3ODQ2Mzd9.ee2cvsVZ6WLN4oeDKbZfPaCKaomB9DJkfQL530CYBek'};
   respuesta = {'res':''};
 
   httpOptions = {
