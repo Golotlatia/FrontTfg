@@ -7,32 +7,41 @@ import { timer } from '../../interfaces/timer';
 
 
 const addUrl = 'http://192.168.100.79:8080/addTimer';
-const urlLogin = 'http://192.168.100.79:8080/getToken';
+const getUrl = 'http://192.168.100.79:8080/read';
+const deleteUrl = 'http://192.168.100.79:8080/deleteTimer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TimerService {
 
+ 
+
   constructor(private http: HttpClient) { }
 
 
 
+  
 
-
-
-  async addTimer (programa: timer):  Promise<any> {
+   addTimer (programa: timer):  any {
     
-
-   
     
     console.log('El objeto que estoy intentando enviar es: ' + JSON.stringify(programa));
-    return await this.http.post<any>(addUrl, programa ).subscribe(data => {});
-
-    
-
+    return  this.http.post<any>(addUrl, programa );
+   
     
   }
+
+
+   getTimers (): any {    
+
+     return this.http.get(getUrl);
+  }
+
+  deleteTimer (programa: timer): any {    
+
+    return this.http.post(deleteUrl, programa);
+ }
 
 
 }

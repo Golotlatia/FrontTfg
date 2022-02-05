@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { timer } from '../interfaces/timer';
 import {TimerService} from '../services/timer/timer.service';
 import { FormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 
 
@@ -20,9 +21,12 @@ export class TimerPageComponent implements OnInit {
 
    StartTime:any;
    EndTime:any;
-  public selectedTime = '18:33';
+   timerName='';
 
-  private programa: timer = {
+  public selectedTime = '18:33';
+  products: Observable<timer[]>;
+
+   programa: timer = {
 
 
     nombre: '',
@@ -86,14 +90,46 @@ prueba(){
 
   this.programa.horaInicio = this.StartTime;
   this.programa.horaFinal = this.EndTime;
+  console.log('El nombre que he puesto al temporizador es: ' + this.programa.nombre);
 
-  const respuesta = this.TimeSer.addTimer(this.programa);
+  const respuesta = this.TimeSer.addTimer(this.programa).subscribe(data=>{
+    console.log("Respuesta del servidor: " + data);
+    this.reloadData();
+  });
   console.log('Respuesta del servidor: ' + respuesta);
 
   
 
 
   
+}
+
+reloadData(){
+  this.TimeSer.getTimers().subscribe(
+    data  => {
+      console.log('Los datos recibidos por el servidor son: ' +  JSON.stringify(data)     );
+      this.products=data;
+       
+      console.log('Los datos que estan en products son: ' + JSON.stringify(this.products));
+      
+      ;});
+
+}
+
+
+deleteTimer(programa:timer){
+
+  console.log('El temporizador recibido es: ' +  JSON.stringify(programa));
+
+
+  this.TimeSer.deleteTimer(programa).subscribe(
+    data  => {
+      console.log('Los datos recibidos por el servidor son: ' +  JSON.stringify(data)     );
+
+      this.reloadData();
+      
+      
+      ;});
 }
 
 
@@ -103,8 +139,11 @@ prueba(){
 
   ngOnInit(): void {
 
-    console.log(this.programa);
+    this.reloadData();
     
+    
+
+        
 
   
   }
